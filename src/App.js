@@ -6,8 +6,9 @@ import NewComment from "./components/newComment";
 import Header from "./components/header";
 import Footer from "./components/footer";
 import Menu from "./components/menu";
-import EditMenu from "./components/editMenu";
-import NotFound from "./components/404";
+import AddMenuItem from "./components/addMenuItem";
+import NotFound from "./components/NotFound";
+import { Container } from "react-bootstrap";
 
 
 function App() {
@@ -18,14 +19,16 @@ function App() {
           <title>Restó App</title>
         </Helmet>
         <Header />
-        <Routes>
-          <Route path="/" element={<Main />} />
-          <Route path="allcomments" element={<AllComments />} />
-          <Route path="newcomment" element={<NewComment />} />
-          <Route path="menu" element={<Menu />} />
-          <Route path="editmenu" element={<EditMenu />} />
-          <Route path="*" element={NotFound} />
-        </Routes>
+        <Container>
+          <Routes>
+            <Route path="*" element={<NotFound />} />
+            <Route path="/" element={<Main />} />
+            <Route path="allcomments" element={<AllComments />} />
+            <Route path="newcomment" element={<NewComment />} />
+            <Route path="menu" element={<Menu />} />
+            <Route path="addmenuitem" element={<AddMenuItem />} />
+          </Routes>
+        </Container>
         <Footer />
       </div>
     </HelmetProvider>
