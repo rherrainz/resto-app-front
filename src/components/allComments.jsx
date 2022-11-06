@@ -10,7 +10,6 @@ function AllComments() {
     useEffect( () => {
         axios.get('http://localhost:8080/comments').then((response) => {
          setComments(response.data.comments);
-         console.log(response.data.comments);
        });
      }, []);
 

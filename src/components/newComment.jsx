@@ -6,6 +6,11 @@ import Form from "react-bootstrap/Form";
 import { Helmet } from "react-helmet-async";
 
 const NewComment = () => {
+
+  const style = {
+    width: "100%"
+  };
+
   const [data, setData] = useState({
     name: "",
     email: "",
@@ -69,6 +74,7 @@ const NewComment = () => {
             </Form.Label>
             <textarea
               className="input-group-text"
+              style={style}
               aria-label="With textarea"
               name="comment"
               value={data.comment}
