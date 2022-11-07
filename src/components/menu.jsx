@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet-async";
-import { Container,Table } from "react-bootstrap";
+import { Container,Table,Button } from "react-bootstrap";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
@@ -18,7 +18,7 @@ const Menu = ()=> {
           <title>Restó App - Nuestro Menú</title>
         </Helmet>
         <div className="d-flex flex-column align-items-left justify-content-center p-3 m-5">
-          <h1>Nuestro Menú</h1>
+          <h1 className="text-center">Nuestro Menú</h1>
           <Container>
             <h2>Entradas</h2>
             <Table striped bordered hover size="" variant="">
@@ -26,9 +26,10 @@ const Menu = ()=> {
                 <tr className="text-center">
                   {/* <th>Ticket id</th> */}
 
-                  <th>Nombre</th>
-                  <th>Descripción</th>
-                  <th>Precio</th>
+                  <th className="col-3">Nombre</th>
+                  <th className="col-5">Descripción</th>
+                  <th className="col-2">Precio</th>
+                  <th className="col-2">Opciones</th>
                 </tr>
               </thead>
               <tbody>
@@ -40,6 +41,10 @@ const Menu = ()=> {
                       <td>{filteredItem.name}</td>
                       <td>{filteredItem.description}</td>
                       <td className="text-end">$ {filteredItem.price}</td>
+                      <td className='d-grid gap-2 d-md-flex justify-content-md-center'>
+                        <Button className='btn btn-success btn-sm'>Editar</Button>
+                        <Button className='btn btn-danger btn-sm'>Borrar</Button>
+                      </td>
                     </tr>
                   ))}
               </tbody>
@@ -51,9 +56,10 @@ const Menu = ()=> {
               <thead>
                 <tr className="text-center">
                   {/* <th>Ticket id</th> */}
-                  <th>Nombre</th>
-                  <th>Descripción</th>
-                  <th>Precio</th>
+                  <th className="col-3">Nombre</th>
+                  <th className="col-5">Descripción</th>
+                  <th className="col-2">Precio</th>
+                  <th className="col-2">Opciones</th>
                 </tr>
               </thead>
               <tbody>
@@ -65,6 +71,10 @@ const Menu = ()=> {
                       <td>{filteredItem.name}</td>
                       <td>{filteredItem.description}</td>
                       <td className="text-end">$ {filteredItem.price}</td>
+                      <td className='d-grid gap-2 d-md-flex justify-content-md-center'>
+                        <Button className='btn btn-success btn-sm'>Editar</Button>
+                        <Button className='btn btn-danger btn-sm'>Borrar</Button>
+                    </td>
                     </tr>
                   ))}
               </tbody>
@@ -76,9 +86,10 @@ const Menu = ()=> {
               <thead>
                 <tr className="text-center">
                   {/* <th>Ticket id</th> */}
-                  <th>Nombre</th>
-                  <th>Descripción</th>
-                  <th>Precio</th>
+                  <th className="col-3">Nombre</th>
+                  <th className="col-5">Descripción</th>
+                  <th className="col-2">Precio</th>
+                  <th className="col-2">Opciones</th>
                 </tr>
               </thead>
               <tbody>
@@ -90,6 +101,10 @@ const Menu = ()=> {
                       <td>{filteredItem.name}</td>
                       <td>{filteredItem.description}</td>
                       <td className="text-end">$ {filteredItem.price}</td>
+                      <td className='d-grid gap-2 d-md-flex justify-content-md-center'>
+                        <Button className='btn btn-success btn-sm'>Editar</Button>
+                        <Button className='btn btn-danger btn-sm'>Borrar</Button>
+                    </td>
                     </tr>
                   ))}
               </tbody>
@@ -101,9 +116,10 @@ const Menu = ()=> {
               <thead>
                 <tr className="text-center">
                   {/* <th>Ticket id</th> */}
-                  <th>Nombre</th>
-                  <th>Descripción</th>
-                  <th>Precio</th>
+                  <th className="col-3">Nombre</th>
+                  <th className="col-5">Descripción</th>
+                  <th className="col-2">Precio</th>
+                  <th className="col-2">Opciones</th>
                 </tr>
               </thead>
               <tbody>
@@ -115,6 +131,10 @@ const Menu = ()=> {
                       <td>{filteredItem.name}</td>
                       <td>{filteredItem.description}</td>
                       <td className="text-end">$ {filteredItem.price}</td>
+                      <td className='d-grid gap-2 d-md-flex justify-content-md-center'>
+                        <Button className='btn btn-success btn-sm'>Editar</Button>
+                        <Button className='btn btn-danger btn-sm'>Borrar</Button>
+                    </td>
                     </tr>
                   ))}
               </tbody>
@@ -126,9 +146,10 @@ const Menu = ()=> {
               <thead>
                 <tr className="text-center">
                   {/* <th>Ticket id</th> */}
-                  <th>Nombre</th>
-                  <th>Descripción</th>
-                  <th>Precio</th>
+                  <th className="col-3">Nombre</th>
+                  <th className="col-5">Descripción</th>
+                  <th className="col-2">Precio</th>
+                  <th className="col-2">Opciones</th>
                 </tr>
               </thead>
               <tbody>
@@ -140,6 +161,10 @@ const Menu = ()=> {
                       <td>{filteredItem.name}</td>
                       <td>{filteredItem.description}</td>
                       <td className="text-end">$ {filteredItem.price}</td>
+                      <td className='d-grid gap-2 d-md-flex justify-content-md-center'>
+                        <Button className='btn btn-success btn-sm'>Editar</Button>
+                        <Button className='btn btn-danger btn-sm'>Borrar</Button>
+                    </td>
                     </tr>
                   ))}
               </tbody>
