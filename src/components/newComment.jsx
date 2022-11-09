@@ -4,12 +4,16 @@ import Button from "react-bootstrap/Button";
 import { Container } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import { Helmet } from "react-helmet-async";
+import Swal from "sweetalert2";
 
 const NewComment = () => {
 
   const style = {
     width: "100%"
   };
+
+  const URL_home = 'http://localhost:8080/comments/';
+  const URL ='https://resto-app-back-production.up.railway.app/comments'
 
   const [data, setData] = useState({
     name: "",
@@ -28,12 +32,17 @@ const NewComment = () => {
   };
 
   const handleSubmit = async () => {
-    await axios.post("https://resto-app-back-production.up.railway.app/comments", data);
+    await axios.post(URL, data);
     setData({
       name: "",
       email: "",
       comment: "",
     });
+    Swal.fire(
+       '¡Muchas Gracias!',
+        '¡Tu comentario ha sido enviado con éxito!',
+        'success'      
+    )
   };
 
   return (
