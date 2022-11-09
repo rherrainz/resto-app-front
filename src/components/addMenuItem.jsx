@@ -23,7 +23,7 @@ const AddMenuItem = ()=> {
       };
     
       const handleSubmit = async () => {
-        await axios.post("http://localhost:8080/menu", data);
+        await axios.post("https://resto-app-back-production.up.railway.app/menu", data);
         setData({
             type: "",
             name: "",

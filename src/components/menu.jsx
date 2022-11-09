@@ -7,7 +7,7 @@ const Menu = ()=> {
     const [menu, setMenu] = useState([]);
 
     useEffect( () => {
-        axios.get('http://localhost:8080/menu').then((response) => {
+        axios.get('https://resto-app-back-production.up.railway.app/menu').then((response) => {
          setMenu(response.data.allMenu);
     });
     }, []);

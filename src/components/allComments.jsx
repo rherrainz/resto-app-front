@@ -8,7 +8,7 @@ function AllComments() {
     const [comments, setComments] = useState([]);
 
     useEffect( () => {
-        axios.get('http://localhost:8080/comments').then((response) => {
+        axios.get('https://resto-app-back-production.up.railway.app/comments').then((response) => {
          setComments(response.data.comments);
        });
      }, []);

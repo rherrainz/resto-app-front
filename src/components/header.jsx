@@ -1,15 +1,14 @@
 import { Navbar, Nav, Container } from 'react-bootstrap';
-import { faUtensils } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from 'react-router-dom';
+import logo from '../assets/logo.svg';
 
 function Header() {
     return (
     <Container>
-        <Navbar bg="dark" variant="dark fixed-top p-2">
+        <Navbar bg="light" variant="light fixed-top p-2">
             
             <Link to="/" className='navbar-brand'>
-                <FontAwesomeIcon icon={faUtensils} className="light" />
+                <img src={logo} alt="logo"/>
             </Link>
             <Nav className="me-auto">
             <Link className='nav-link' to="/">Home</Link>

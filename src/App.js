@@ -18,17 +18,17 @@ function App() {
         <Helmet>
           <title>Restó App</title>
         </Helmet>
-        <Header />
-        <Container>
+        <Header /> 
+        <Container> 
           <Routes>
             <Route path="*" element={<NotFound />} />
             <Route path="/" element={<Main />} />
             <Route path="allcomments" element={<AllComments />} />
             <Route path="newcomment" element={<NewComment />} />
-            <Route path="menu" element={<Menu />} />
+            <Route path="menu" element={<Menu />} /> 
             <Route path="addmenuitem" element={<AddMenuItem />} />
           </Routes>
-        </Container>
+        </Container> 
         <Footer />
       </div>
     </HelmetProvider>

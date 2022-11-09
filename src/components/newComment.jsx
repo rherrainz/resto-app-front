@@ -28,7 +28,7 @@ const NewComment = () => {
   };
 
   const handleSubmit = async () => {
-    await axios.post("http://localhost:8080/comments", data);
+    await axios.post("https://resto-app-back-production.up.railway.app/comments", data);
     setData({
       name: "",
       email: "",
