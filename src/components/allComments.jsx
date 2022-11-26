@@ -8,17 +8,17 @@ function AllComments() {
 
     const [comments, setComments] = useState([]);
 
-    const URL_home = 'http://localhost:8080/comments/';
-    /*const URL ='https://resto-app-back-production.up.railway.app/comments/'*/
+    
+    const URL ='https://resto-app-back-production.up.railway.app/comments/'
 
     useEffect( () => {
-        axios.get(URL_home).then((response) => {
+        axios.get(URL).then((response) => {
          setComments(response.data.comments);
        });
      }, []);
 
      const handleDelete = async (id) => {
-        await axios.delete(URL_home+`delete/${id}`);
+        await axios.delete(URL+`delete/${id}`);
         setComments(comments.filter((comment) => comment._id !== id));
         Swal.fire(
             'Comentario Eliminado',

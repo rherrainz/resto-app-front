@@ -7,17 +7,17 @@ import Swal from 'sweetalert2'
 const Menu = ()=> {
     const [menu, setMenu] = useState([]);
 
-    const URL_home = 'http://localhost:8080/menu/';
-    //const URL ='https://resto-app-back-production.up.railway.app/menu/'
+    
+    const URL ='https://resto-app-back-production.up.railway.app/menu/'
 
     useEffect( () => {
-        axios.get(URL_home).then((response) => {
+        axios.get(URL).then((response) => {
          setMenu(response.data.allMenu);
     });
     }, []);
 
     const handleDelete = async (id) => {
-      await axios.delete(URL_home+`delete/${id}`);
+      await axios.delete(URL+`delete/${id}`);
       setMenu(menu.filter((item) => item._id !== id));
       Swal.fire(
           'Elemento Eliminado',
