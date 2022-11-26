@@ -2,8 +2,12 @@ import React, { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Container,Form,Button } from "react-bootstrap";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 const AddMenuItem = ()=> {
+
+  const URL_home = 'http://localhost:8080/menu/';
+  //const URL ='https://resto-app-back-production.up.railway.app/comments'
 
     const [data, setData] = useState({
         type: "",
@@ -23,13 +27,18 @@ const AddMenuItem = ()=> {
       };
     
       const handleSubmit = async () => {
-        await axios.post("https://resto-app-back-production.up.railway.app/menu", data);
+        await axios.post(URL_home, data);
         setData({
             type: "",
             name: "",
             description: "",
             price: "",
         });
+        Swal.fire(
+          '¡Muchas Gracias!',
+           '¡El artículo ha sido agregado con éxito',
+           'success'      
+       )
       };
 
     return (

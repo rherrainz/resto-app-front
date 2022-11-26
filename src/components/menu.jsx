@@ -2,15 +2,29 @@ import { Helmet } from "react-helmet-async";
 import { Container,Table,Button } from "react-bootstrap";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import Swal from 'sweetalert2'
 
 const Menu = ()=> {
     const [menu, setMenu] = useState([]);
 
+    const URL_home = 'http://localhost:8080/menu/';
+    //const URL ='https://resto-app-back-production.up.railway.app/menu/'
+
     useEffect( () => {
-        axios.get('https://resto-app-back-production.up.railway.app/menu').then((response) => {
+        axios.get(URL_home).then((response) => {
          setMenu(response.data.allMenu);
     });
     }, []);
+
+    const handleDelete = async (id) => {
+      await axios.delete(URL_home+`delete/${id}`);
+      setMenu(menu.filter((item) => item._id !== id));
+      Swal.fire(
+          'Elemento Eliminado',
+           '¡El artículo ha sido eliminado!',
+           'error'      
+       )
+   }
 
     return (
       <Container className="m3 p5 d-flex flex-column align-items-center justify-content-center">
@@ -42,8 +56,9 @@ const Menu = ()=> {
                       <td>{filteredItem.description}</td>
                       <td className="text-end">$ {filteredItem.price}</td>
                       <td className='d-grid gap-2 d-md-flex justify-content-md-center'>
-                        <Button className='btn btn-success btn-sm'>Editar</Button>
-                        <Button className='btn btn-danger btn-sm'>Borrar</Button>
+                        <Button className='btn btn-danger btn-sm' onClick={() => {
+                          handleDelete(filteredItem._id);
+                        }}>Borrar</Button>
                       </td>
                     </tr>
                   ))}
@@ -72,8 +87,9 @@ const Menu = ()=> {
                       <td>{filteredItem.description}</td>
                       <td className="text-end">$ {filteredItem.price}</td>
                       <td className='d-grid gap-2 d-md-flex justify-content-md-center'>
-                        <Button className='btn btn-success btn-sm'>Editar</Button>
-                        <Button className='btn btn-danger btn-sm'>Borrar</Button>
+                      <Button className='btn btn-danger btn-sm' onClick={() => {
+                          handleDelete(filteredItem._id);
+                        }}>Borrar</Button>
                     </td>
                     </tr>
                   ))}
@@ -102,8 +118,9 @@ const Menu = ()=> {
                       <td>{filteredItem.description}</td>
                       <td className="text-end">$ {filteredItem.price}</td>
                       <td className='d-grid gap-2 d-md-flex justify-content-md-center'>
-                        <Button className='btn btn-success btn-sm'>Editar</Button>
-                        <Button className='btn btn-danger btn-sm'>Borrar</Button>
+                      <Button className='btn btn-danger btn-sm' onClick={() => {
+                          handleDelete(filteredItem._id);
+                        }}>Borrar</Button>
                     </td>
                     </tr>
                   ))}
@@ -132,8 +149,9 @@ const Menu = ()=> {
                       <td>{filteredItem.description}</td>
                       <td className="text-end">$ {filteredItem.price}</td>
                       <td className='d-grid gap-2 d-md-flex justify-content-md-center'>
-                        <Button className='btn btn-success btn-sm'>Editar</Button>
-                        <Button className='btn btn-danger btn-sm'>Borrar</Button>
+                      <Button className='btn btn-danger btn-sm' onClick={() => {
+                          handleDelete(filteredItem._id);
+                        }}>Borrar</Button>
                     </td>
                     </tr>
                   ))}
@@ -162,8 +180,9 @@ const Menu = ()=> {
                       <td>{filteredItem.description}</td>
                       <td className="text-end">$ {filteredItem.price}</td>
                       <td className='d-grid gap-2 d-md-flex justify-content-md-center'>
-                        <Button className='btn btn-success btn-sm'>Editar</Button>
-                        <Button className='btn btn-danger btn-sm'>Borrar</Button>
+                      <Button className='btn btn-danger btn-sm' onClick={() => {
+                          handleDelete(filteredItem._id);
+                        }}>Borrar</Button>
                     </td>
                     </tr>
                   ))}

@@ -13,7 +13,7 @@ const NewComment = () => {
   };
 
   const URL_home = 'http://localhost:8080/comments/';
-  const URL ='https://resto-app-back-production.up.railway.app/comments'
+  //const URL ='https://resto-app-back-production.up.railway.app/comments'
 
   const [data, setData] = useState({
     name: "",
@@ -32,7 +32,7 @@ const NewComment = () => {
   };
 
   const handleSubmit = async () => {
-    await axios.post(URL, data);
+    await axios.post(URL_home, data);
     setData({
       name: "",
       email: "",
